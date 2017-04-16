@@ -1,6 +1,6 @@
 <?php
 /**
- * Laravel Multi-Language <https://github.com/renatomarinho/laravel-multi-language>
+ * Laravel Multi-Language <https://github.com/renatomarinho/laravel-multi-language>.
  *
  * The MIT License (MIT)
  * Copyright (c) 2017 Renato Marinho <renato.marinho@s2move.com>
@@ -8,7 +8,6 @@
 
 namespace RenatoMarinho\LaravelMultiLanguage;
 
-use Exception;
 use Illuminate\Console\Command;
 
 class MultiLanguageListCommand extends Command
@@ -50,10 +49,10 @@ class MultiLanguageListCommand extends Command
     {
         $this->line('| ');
         $this->line('| ');
-        $this->line('| ' . config('app.name') . ' has ' .
-            $this->totalLanguages() . ' languages available');
+        $this->line('| '.config('app.name').' has '.
+            $this->totalLanguages().' languages available');
         $this->line('| ');
-        $this->line('| ' . $this->availableLanguages());
+        $this->line('| '.$this->availableLanguages());
         $this->line('| ');
         $this->line('| ');
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Laravel Multi-Language <https://github.com/renatomarinho/laravel-multi-language>
+ * Laravel Multi-Language <https://github.com/renatomarinho/laravel-multi-language>.
  *
  * The MIT License (MIT)
  * Copyright (c) 2017 Renato Marinho <renato.marinho@s2move.com>
@@ -8,9 +8,6 @@
 
 namespace RenatoMarinho\LaravelMultiLanguage;
 
-use Exception;
-use File;
-use Symfony\Component\Finder\Finder;
 use Illuminate\Console\Command;
 
 class MultiLanguageUpdateCommand extends Command
@@ -49,5 +46,4 @@ class MultiLanguageUpdateCommand extends Command
         $this->find();
         $this->generateFile();
     }
-
 }
