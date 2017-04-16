@@ -1,6 +1,6 @@
 <?php
 /**
- * Laravel Multi-Language <https://github.com/renatomarinho/laravel-multi-language>
+ * Laravel Multi-Language <https://github.com/renatomarinho/laravel-multi-language>.
  *
  * The MIT License (MIT)
  * Copyright (c) 2017 Renato Marinho <renato.marinho@s2move.com>
@@ -10,11 +10,11 @@ namespace RenatoMarinho\LaravelMultiLanguage;
 
 use Illuminate\Support\ServiceProvider;
 
-class MultiLanguageServiceProvider extends ServiceProvider {
-
+class MultiLanguageServiceProvider extends ServiceProvider
+{
     protected $commands = [
         MultiLanguageListCommand::class,
-        MultiLanguageUpdateCommand::class
+        MultiLanguageUpdateCommand::class,
     ];
 
     /**
@@ -29,8 +29,8 @@ class MultiLanguageServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot() {
-
+    public function boot()
+    {
     }
 
     /**
@@ -38,10 +38,9 @@ class MultiLanguageServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function register() {
-
+    public function register()
+    {
         $this->commands($this->commands);
-
     }
 
     /**
