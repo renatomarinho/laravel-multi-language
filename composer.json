@@ -1,0 +1,26 @@
+{
+    "name": "renatomarinho/laravel-multi-language",
+    "description": "Laravel Multi Language",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "laravel/laravel": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Renato Marinho",
+            "email": "renato.marinho@s2move.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"RenatoMarinho\\LaravelMultiLanguage\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"RenatoMarinho\\LaravelMultiLanguage\\": "tests/"}
+    },
+    "minimum-stability": "stable"
+}
