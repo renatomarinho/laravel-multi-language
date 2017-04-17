@@ -50,7 +50,7 @@ trait MultiLanguage
             foreach ($this->languageKeys as $value) {
                 $exp = explode('.', $value);
                 if ($exp[0] == $path['filename']) {
-                    $value = str_replace($path['filename'].'.', '', $value );
+                    $value = str_replace($path['filename'].'.', '', $value);
                     $arr[$value] = $arrFile[$value] ?? $path['filename'].'.'.$value;
                 }
             }
