@@ -13,26 +13,14 @@ use Symfony\Component\Finder\Finder;
 
 trait MultiLanguage
 {
-    private $appName;
     private $languageKeys;
     private $languages;
     private $languageDirectories;
 
     public function init()
     {
-        $this->setAppName();
         $this->setLanguageDirectories();
         $this->listLanguages();
-    }
-
-    private function setAppName()
-    {
-        $this->appName = strtolower(config('app.name')).'.';
-    }
-
-    private function getAppName()
-    {
-        return $this->appName;
     }
 
     private function setLanguageDirectories()
@@ -56,10 +44,15 @@ trait MultiLanguage
         $finder->in($this->languageDirectories);
 
         foreach ($finder as $file) {
+            $path = pathinfo($file);
             $arrFile = include $file;
-
+            $arr = [];
             foreach ($this->languageKeys as $value) {
-                $arr[$value] = $arrFile[$value] ?? $this->getAppName().$value;
+                $exp = explode('.', $value);
+                if ($exp[0] == $path['filename']) {
+                    $value = str_replace($path['filename'].'.', '', $value );
+                    $arr[$value] = $arrFile[$value] ?? $path['filename'].'.'.$value;
+                }
             }
 
             $this->putFile($file, $arr);
@@ -75,8 +68,9 @@ trait MultiLanguage
         $template .= "\n";
         $template .= str_replace($search, $replace, $this->banner());
         $template .= "\n\r";
-        $template .= 'return '.var_export($arr, true).';';
-
+        if (!empty($arr)) {
+            $template .= 'return '.var_export($arr, true).';';
+        }
         File::put($file, $template);
         $this->line('Put file '.$file);
     }
@@ -120,7 +114,7 @@ trait MultiLanguage
         foreach ($finder as $file) {
             if (preg_match_all("/$pattern/siU", $file->getContents(), $matches)) {
                 foreach ($matches[2] as $key) {
-                    $keys[] = str_replace($this->getAppName(), '', $key);
+                    $keys[] = $key;
                 }
             }
 
