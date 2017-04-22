@@ -46,4 +46,42 @@ class MultiLanguageUpdateCommand extends Command
         $this->find();
         $this->generateFile();
     }
+
+    public function generateFile()
+    {
+        $arr = [];
+        $finder = new Finder();
+        $finder->in($this->languageDirectories);
+
+        foreach ($finder as $file) {
+            $path = pathinfo($file);
+            $arrFile = include $file;
+            $arr = [];
+            foreach ($this->languageKeys as $value) {
+                $exp = explode('.', $value);
+                if ($exp[0] == $path['filename']) {
+                    $key = str_replace($path['filename'].'.', '', $value );
+                    $arr[$key] = $arrFile[$key] ?? $value;
+                }
+            }
+
+            $this->putFile($file, $arr);
+        }
+    }
+
+    public function putFile($file, $arr)
+    {
+        $search = ['{date}', '{lines}'];
+        $replace = [date('Y-m-d h:s:i'), count($arr)];
+
+        $template = '<?php ';
+        $template .= "\n";
+        $template .= str_replace($search, $replace, $this->banner());
+        $template .= "\n\r";
+        if (!empty($arr)) {
+            $template .= 'return '.var_export($arr, true).';';
+        }
+        File::put($file, $template);
+        $this->line('Put file '.$file);
+    }
 }
