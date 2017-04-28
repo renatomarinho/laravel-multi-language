@@ -1,4 +1,4 @@
-# Laravel Multi-language
+# Laravel Scan-Language-Text
 
 [![Laravel 5.4](https://img.shields.io/badge/Laravel-5.4-brightgreen.svg?style=flat-square)](http://laravel.com)
 [![License](https://poser.pugx.org/renatomarinho/laravel-multi-language/license)](https://packagist.org/packages/renatomarinho/laravel-multi-language)
@@ -7,11 +7,11 @@
 [![Total Downloads](https://poser.pugx.org/renatomarinho/laravel-multi-language/downloads)](https://packagist.org/packages/renatomarinho/laravel-multi-language)
 
 
-Laravel Multi-Language detect all language strings on application and update the language file to translations.
+Laravel Scan-Language-Text detect all language texts on application and update on language file to translations.
 
 ### Instalation 
 
-Laravel Multi-Language requires PHP 7.
+Laravel Scan-Language-Text requires PHP 7.
 
 Require this package with composer using the following command:
 
