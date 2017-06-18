@@ -62,7 +62,7 @@ class MultiLanguageUpdateCommand extends Command
             foreach ($this->languageKeys as $value) {
                 $exp = explode('.', $value);
                 if ($exp[0] == $path['filename']) {
-                    $key = str_replace($path['filename'].'.', '', $value );
+                    $key = str_replace($path['filename'].'.', '', $value);
                     $arr[$key] = $arrFile[$key] ?? $value;
                 }
             }
