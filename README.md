@@ -1,6 +1,7 @@
 # Laravel Scan-Language-Text
 
 [![Laravel 5.4](https://img.shields.io/badge/Laravel-5.4-brightgreen.svg?style=flat-square)](http://laravel.com)
+[![Laravel 5.5](https://img.shields.io/badge/Laravel-5.5-brightgreen.svg?style=flat-square)](http://laravel.com)
 [![License](https://poser.pugx.org/renatomarinho/laravel-multi-language/license)](https://packagist.org/packages/renatomarinho/laravel-multi-language)
 [![StyleCI](https://styleci.io/repos/88404078/shield?branch=master)](https://styleci.io/repos/88404078)
 [![Latest Stable Version](https://poser.pugx.org/renatomarinho/laravel-multi-language/v/stable)](https://packagist.org/packages/renatomarinho/laravel-multi-language)
