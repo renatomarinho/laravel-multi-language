@@ -35,6 +35,11 @@ class MultiLanguageListCommand extends Command
     {
         parent::__construct();
     }
+    
+    public function handle()
+    {
+        $this->fire();
+    }
 
     /**
      * Execute the console command.
